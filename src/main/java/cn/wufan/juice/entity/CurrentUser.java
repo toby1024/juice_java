@@ -1,11 +1,6 @@
-package cn.wufan.juice_java.entity;
+package cn.wufan.juice.entity;
 
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.userdetails.*;
-
-import java.util.Collection;
-import java.util.List;
 
 /**
  * Created by zhangbin on 2017/7/21.

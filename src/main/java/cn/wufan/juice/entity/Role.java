@@ -1,4 +1,4 @@
-package cn.wufan.juice_java.entity;
+package cn.wufan.juice.entity;
 
 /**
  * Created by zhangbin on 2017/7/21.

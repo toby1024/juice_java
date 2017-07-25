@@ -1,7 +1,6 @@
-package cn.wufan.juice_java.service;
+package cn.wufan.juice.service;
 
-import cn.wufan.juice_java.entity.User;
-import cn.wufan.juice_java.mapper.UserMapper;
+import cn.wufan.juice.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package cn.wufan.juice_java.entity;
+package cn.wufan.juice.entity;
 
 import java.util.List;
 

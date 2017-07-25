@@ -1,20 +1,17 @@
-package cn.wufan.juice_java.service.currentuser;
+package cn.wufan.juice.service.currentuser;
 
-import cn.wufan.juice_java.entity.CurrentUser;
-import cn.wufan.juice_java.entity.Role;
-import cn.wufan.juice_java.entity.User;
-import cn.wufan.juice_java.mapper.UserMapper;
-import cn.wufan.juice_java.mapper.UserRoleMapper;
+import cn.wufan.juice.entity.CurrentUser;
+import cn.wufan.juice.entity.Role;
+import cn.wufan.juice.entity.User;
+import cn.wufan.juice.mapper.UserMapper;
+import cn.wufan.juice.mapper.UserRoleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by zhangbin on 2017/7/21.

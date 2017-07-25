@@ -1,4 +1,4 @@
-package cn.wufan.juice_java.entity;
+package cn.wufan.juice.entity;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -31,12 +31,12 @@ public class User {
         this.salt = UUID.randomUUID().toString();
     }
 
-    public String[] getRoleNames(){
-        if(this.getRoles() == null || this.getRoles().isEmpty()){
+    public String[] getRoleNames() {
+        if (this.getRoles() == null || this.getRoles().isEmpty()) {
             return null;
         }
         List<String> names = new ArrayList<>(this.getRoles().size());
-        for(Role role : this.getRoles()){
+        for (Role role : this.getRoles()) {
             names.add(role.getName());
         }
         return (String[]) names.toArray(new String[names.size()]);

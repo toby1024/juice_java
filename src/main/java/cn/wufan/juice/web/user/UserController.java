@@ -1,4 +1,4 @@
-package cn.wufan.juice_java.web.user;
+package cn.wufan.juice.web.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 
     @RequestMapping("index")
-    public String index(){
+    public String index() {
         return "user/index";
     }
 }

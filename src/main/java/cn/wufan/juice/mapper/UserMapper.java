@@ -1,6 +1,6 @@
-package cn.wufan.juice_java.mapper;
+package cn.wufan.juice.mapper;
 
-import cn.wufan.juice_java.entity.User;
+import cn.wufan.juice.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

@@ -1,7 +1,7 @@
-package cn.wufan.juice_java.mapper;
+package cn.wufan.juice.mapper;
 
-import cn.wufan.juice_java.entity.Role;
-import cn.wufan.juice_java.entity.User;
+import cn.wufan.juice.entity.Role;
+import cn.wufan.juice.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;

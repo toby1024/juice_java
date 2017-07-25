@@ -1,4 +1,4 @@
-package cn.wufan.juice_java.web;
+package cn.wufan.juice.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,10 +19,10 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public String login(){
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() {
         System.out.println("====login ========");
-        return  "login";
+        return "login";
     }
 
 }
