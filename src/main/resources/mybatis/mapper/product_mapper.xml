@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.wufan.juice.mapper.ProductMapper">
+
+    <resultMap id="product" type="cn.wufan.juice.entity.Product">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="description" property="description" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="FLOAT"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="discount" property="discount" jdbcType="FLOAT"/>
+        <result column="created_at" property="createdAt" jdbcType="DATE"/>
+        <result column="updated_at" property="updatedAt" jdbcType="DATE"/>
+        <result column="category" property="category" jdbcType="INTEGER"/>
+        <association property="store" column="store_id" select="cn.wufan.juice.mapper.StoreMapper.find" javaType="cn.wufan.juice.entity.Store"/>
+    </resultMap>
+
+    <resultMap id="fruit" type="cn.wufan.juice.entity.Fruit" extends="product"/>
+
+    <resultMap id="juice" type="cn.wufan.juice.entity.Juice" extends="product"/>
+
+    <sql id="products_columns">
+        id, name, description, price, status, discount,image, category, store_id, created_at, updated_at
+    </sql>
+
+    <insert id="saveFruit" parameterType="cn.wufan.juice.entity.Fruit" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into products(name, description, price, status, discount, image, store_id, created_at, updated_at, category)
+        values(#{name}, #{description}, #{price}, #{status}, #{discount}, #{image}, #{store.id}, #{createdAt}, #{updatedAt}, 0)
+    </insert>
+
+    <insert id="sageJuice" parameterType="cn.wufan.juice.entity.Juice" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        insert into products(name, description, price, status, discount, image, store_id, created_at, updated_at, category)
+        values(#{name}, #{description}, #{price}, #{status}, #{discount}, #{image}, #{store.id}, #{createdAt}, #{updatedAt}, 1)
+    </insert>
+
+    <select id="findFruit" resultMap="fruit" parameterType="java.lang.Long">
+        select
+        <include refid="products_columns"/>
+        from products
+        where id = #{id} and status = 1
+    </select>
+
+    <select id="findAllFruit" resultMap="fruit">
+        select
+        <include refid="products_columns"/>
+        from products
+        where status = 1
+    </select>
+
+    <select id="findJuice" resultMap="juice" parameterType="java.lang.Long">
+        select
+        <include refid="products_columns"/>
+        from products
+        where id = #{id}
+    </select>
+
+</mapper>

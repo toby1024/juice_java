@@ -15,8 +15,8 @@ public interface UserRoleMapper {
 
     public List<Role> findRolesByUser(Long userId);
 
-    public Long saveRole(Role role);
+    public int saveRole(Role role);
 
-    public Long save(@Param("userId") Long userId, @Param("roleId") Long roleId);
+    public int save(@Param("userId") Long userId, @Param("roleId") Long roleId);
 
 }

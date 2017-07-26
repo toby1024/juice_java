@@ -18,7 +18,7 @@
         <result column="status" property="status" jdbcType="INTEGER"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
+    <sql id="users_cloumns">
         id, password, salt, superuser, username, email, status, created_at, updated_at
     </sql>
 
@@ -31,20 +31,20 @@
 
     <select id="findAll" resultMap="BaseResultMap">
         SELECT
-        <include refid="Base_Column_List"/>
+        <include refid="users_cloumns"/>
         FROM users
     </select>
 
     <select id="findUserById" parameterType="java.lang.Long" resultMap="BaseResultMap">
         SELECT
-        <include refid="Base_Column_List"/>
+        <include refid="users_cloumns"/>
         FROM users
         WHERE id = #{id}
     </select>
 
     <select id="findByUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
         SELECT
-        <include refid="Base_Column_List"/>
+        <include refid="users_cloumns"/>
         FROM users
         WHERE username = #{username}
     </select>
