@@ -29,9 +29,9 @@
     </root>
 
     <!-- logback为java中的包 -->
-    <logger name="cn.wufan.juice.web"/>
+    <logger name="cn.wufan.juice.controller"/>
     <!--logback.LogbackDemo：类的全路径 -->
-    <logger name="cn.wufan.juice.web" level="DEBUG" additivity="false">
+    <logger name="cn.wufan.juice.controller" level="DEBUG" additivity="false">
         <appender-ref ref="console"/>
     </logger>
     <logger name="cn.wufan.juice.mapper" level="DEBUG" additivity="false">

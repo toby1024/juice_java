@@ -5,26 +5,62 @@ import java.sql.Date;
 /**
  * Created by zhangbin on 2017/7/26.
  */
-public abstract class Product {
+public class Product {
     private Long id;
     private String name;
     private String description;
     private float price;
     private int status;
     private float discount;
+    private int category;
     private Store store;
     private String image;
     private Date createdAt;
     private Date updatedAt;
 
+    /**
+     * 类型枚举 fruit：0 ， juice：1.
+     */
+    public enum CategoryEnum {
+        FRUIT(0), JUICE(1);
+
+        private int code;
+
+        private CategoryEnum(int i) {
+            this.code = i;
+        }
+
+        public int getCode() {
+            return code;
+        }
+    }
+
+    /**
+     * 状态枚举 active：1，archived：0.
+     */
+    public enum StatusEnum {
+        ACTIVE(1), ARCHIVED(0);
+        private int code;
+
+        private StatusEnum(int code) {
+            this.code = code;
+        }
+
+        public int getCode() {
+            return code;
+        }
+    }
+
     public Product() {
     }
 
-    public Product(String name, String description, float price, int status, float discount, String image, Store store) {
+    public Product(String name, String description, float price, int status, int category,
+                   float discount, String image, Store store) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.status = status;
+        this.category = category;
         this.discount = discount;
         this.image = image;
         this.store = store;
@@ -70,6 +106,14 @@ public abstract class Product {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public int getCategory() {
+        return category;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
     }
 
     public float getDiscount() {

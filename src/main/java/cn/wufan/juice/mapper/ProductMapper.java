@@ -2,9 +2,10 @@ package cn.wufan.juice.mapper;
 
 import cn.wufan.juice.entity.Fruit;
 import cn.wufan.juice.entity.Juice;
-import org.apache.ibatis.annotations.Mapper;
-
+import cn.wufan.juice.entity.Product;
 import java.util.List;
+import java.util.Map;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * Created by zhangbin on 2017/7/26.
@@ -20,4 +21,5 @@ public interface ProductMapper {
 
     public Juice findJuice(Long id);
 
+    List<Product> findAll(Map<String, Object> params);
 }

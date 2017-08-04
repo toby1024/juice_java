@@ -12,7 +12,8 @@
         <result column="created_at" property="createdAt" jdbcType="DATE"/>
         <result column="updated_at" property="updatedAt" jdbcType="DATE"/>
         <result column="category" property="category" jdbcType="INTEGER"/>
-        <association property="store" column="store_id" select="cn.wufan.juice.mapper.StoreMapper.find" javaType="cn.wufan.juice.entity.Store"/>
+        <association property="store" column="store_id" select="cn.wufan.juice.mapper.StoreMapper.find"
+                     javaType="cn.wufan.juice.entity.Store"/>
     </resultMap>
 
     <resultMap id="fruit" type="cn.wufan.juice.entity.Fruit" extends="product"/>
@@ -23,15 +24,30 @@
         id, name, description, price, status, discount,image, category, store_id, created_at, updated_at
     </sql>
 
-    <insert id="saveFruit" parameterType="cn.wufan.juice.entity.Fruit" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    <insert id="saveFruit" parameterType="cn.wufan.juice.entity.Fruit" useGeneratedKeys="true" keyProperty="id"
+            keyColumn="id">
         insert into products(name, description, price, status, discount, image, store_id, created_at, updated_at, category)
         values(#{name}, #{description}, #{price}, #{status}, #{discount}, #{image}, #{store.id}, #{createdAt}, #{updatedAt}, 0)
     </insert>
 
-    <insert id="sageJuice" parameterType="cn.wufan.juice.entity.Juice" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    <insert id="sageJuice" parameterType="cn.wufan.juice.entity.Juice" useGeneratedKeys="true" keyProperty="id"
+            keyColumn="id">
         insert into products(name, description, price, status, discount, image, store_id, created_at, updated_at, category)
         values(#{name}, #{description}, #{price}, #{status}, #{discount}, #{image}, #{store.id}, #{createdAt}, #{updatedAt}, 1)
     </insert>
+
+    <select id="findAll" resultMap="product">
+        select
+        <include refid="products_columns"/>
+        from products
+        where status = 1
+        <if test="name != null">
+            and name like '%${name}%'
+        </if>
+        <if test="category != null">
+            and category = #{category}
+        </if>
+    </select>
 
     <select id="findFruit" resultMap="fruit" parameterType="java.lang.Long">
         select
@@ -44,7 +60,7 @@
         select
         <include refid="products_columns"/>
         from products
-        where status = 1
+        where status = 1 and category = 0
     </select>
 
     <select id="findJuice" resultMap="juice" parameterType="java.lang.Long">
