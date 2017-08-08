@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -21,12 +22,20 @@ public class HomeController {
     @Autowired
     private ProductService productService;
 
+    @RequestMapping("/home/main")
+    public String main(){
+        LOGGER.info("---main page--");
+        return "web/main";
+    }
+
     @RequestMapping("/")
-    public String getHomePage(String name, Integer category) {
+    public String getHomePage(String name, Integer category, Model model) {
 
         List<Product> list = productService.findAll(name, category);
+        LOGGER.info("===total count:"+list.size());
+        model.addAttribute("products", list);
         LOGGER.info("-------->home");
-        return "home";
+        return "web/home";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
