@@ -1,4 +1,4 @@
-FROM daocloud.io/java:8 maven
+FROM daocloud.io/tcsoft2016/springboot-maven
 
 ENV RUN_ENV prod
 
