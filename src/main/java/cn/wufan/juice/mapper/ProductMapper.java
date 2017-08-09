@@ -22,4 +22,6 @@ public interface ProductMapper {
     public Juice findJuice(Long id);
 
     List<Product> findAll(Map<String, Object> params);
+
+    List<Product> hots();
 }

@@ -35,7 +35,7 @@ public class ProductMapperTests {
         Store store = new Store("store", "address", "link man", "13112341234", 1);
         storeMapper.save(store);
 
-        Fruit fruit = new Fruit("apple","this is an apple", 10.0F, Product.StatusEnum.ACTIVE.getCode(), 1.0F, "image url", store);
+        Fruit fruit = new Fruit("apple","this is an apple", 10.0F, Product.StatusEnum.ACTIVE.getCode(), 1.0F,1, "image url", store);
         productMapper.saveFruit(fruit);
 
         Fruit findFruit = productMapper.findFruit(fruit.getId());
@@ -48,10 +48,10 @@ public class ProductMapperTests {
         Store store = new Store("store", "address", "link man", "13112341234", 1);
         storeMapper.save(store);
 
-        Fruit fruit = new Fruit("apple","this is an apple", 10.0F, Product.StatusEnum.ACTIVE.getCode(), 1.0F, "image url", store);
+        Fruit fruit = new Fruit("apple","this is an apple", 10.0F, Product.StatusEnum.ACTIVE.getCode(), 1.0F, 1, "image url", store);
         productMapper.saveFruit(fruit);
 
-        fruit = new Fruit("orange","this is an orange", 10.5F, Product.StatusEnum.ACTIVE.getCode(), 1.0F, "image url", store);
+        fruit = new Fruit("orange","this is an orange", 10.5F, Product.StatusEnum.ACTIVE.getCode(), 1.0F, 1, "image url", store);
         productMapper.saveFruit(fruit);
 
         Map<String, Object> params = new HashMap<>();

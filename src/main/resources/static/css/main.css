@@ -32,9 +32,9 @@ body {
 }
 
 /* Customize container */
-@media (min-width: 768px) {
+@media (min-width: 1240px) {
     .container {
-        max-width: 730px;
+        max-width: 1200px;
     }
 }
 .container-narrow > hr {
@@ -42,6 +42,10 @@ body {
 }
 
 /* Main marketing message and sign up button */
+.banner {
+    color: white;
+    background-image: url("/images/banner.jpeg");
+}
 .jumbotron {
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
@@ -60,7 +64,7 @@ body {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1240px) {
     /* Remove the padding we set earlier */
     .header,
     .marketing,
@@ -76,4 +80,76 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+.panel-hot > .panel-heading {
+    color: #ffffff;
+    background-color: #ff0000;
+}
+
+.panel-popular > .panel-heading {
+    color: #ffffff;
+    background-color: #76488e;
+}
+.panel-discount > .panel-heading {
+    color: #ffffff;
+    background-color: #4998a1;
+}
+
+.panel-discount > .panel-body {
+    color: #4998a1;
+}
+
+.padding-left-none {
+    padding-left: 0px;
+}
+
+.padding-right-none {
+    padding-right: 0px;
+}
+.juice_image {
+    width: 200px;
+}
+
+.hot-name {
+    font-size: 14px;
+    color: #ff0000;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width: 80px;
+    line-height: 20px;
+    z-index: 1;
+    word-wrap: break-word;
+}
+.hot-image {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+    -webkit-transition: -webkit-transform .4s ease-out;
+    transition: -webkit-transform .4s ease-out;
+    -moz-transition: transform .4s ease-out, -moz-transform .4s ease-out;
+    transition: transform .4s ease-out;
+    transition: transform .4s ease-out, -webkit-transform .4s ease-out, -moz-transform .4s ease-out
+}
+.hot-list {
+    list-style-type:none;
+    width: 370px;
+    height: 363px;
+    overflow: hidden
+}
+
+.hot-item{
+    float: left;
+    border-right: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7
+}
+.hot-item-lk {
+    display: block;*
+    zoom: 1;
+    width: 185px;
+    height: 120px;
+    position: relative
 }

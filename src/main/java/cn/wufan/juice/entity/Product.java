@@ -15,6 +15,8 @@ public class Product {
     private int category;
     private Store store;
     private String image;
+    private int header;
+    private int hot;
     private Date createdAt;
     private Date updatedAt;
 
@@ -55,7 +57,7 @@ public class Product {
     }
 
     public Product(String name, String description, float price, int status, int category,
-                   float discount, String image, Store store) {
+                   float discount, int header, String image, Store store) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -64,6 +66,7 @@ public class Product {
         this.discount = discount;
         this.image = image;
         this.store = store;
+        this.header = header;
         this.createdAt = new Date(System.currentTimeMillis());
         this.updatedAt = new Date(System.currentTimeMillis());
     }
@@ -130,6 +133,22 @@ public class Product {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public int getHeader() {
+        return header;
+    }
+
+    public void setHeader(int header) {
+        this.header = header;
+    }
+
+    public int getHot() {
+        return hot;
+    }
+
+    public void setHot(int hot) {
+        this.hot = hot;
     }
 
     public Store getStore() {

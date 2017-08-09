@@ -16,18 +16,17 @@
     <div class="header clearfix">
         <nav>
             <ul class="nav nav-pills pull-right">
-                <li role="presentation" class="active"><a href="#">Home</a></li>
-                <li role="presentation"><a href="#">About</a></li>
-                <li role="presentation"><a href="#">Products</a></li>
+                <li role="presentation"><a href="/about">About</a></li>
+                <li role="presentation"><a href="/Juice">Juice</a></li>
+                <li role="presentation"><a href="/stores">Stores</a></li>
+                <li role="presentation"><a href="/carts">Carts</a></li>
             </ul>
         </nav>
-        <h3 class="text-muted">Wufan's Juice Store</h3>
+        <h3 class="text-muted"><img style="width: 40px;" src="/images/logo.jpg" />Wufan's Juice Store</h3>
     </div>
 
-    <div class="jumbotron">
-        <h1></h1>
-        <p class="lead">Fruit juice with rich nutrition, provide us with necessary vitamins every day.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+    <div class="jumbotron banner">
+        <h1>新鲜每一天</h1>
     </div>
 
     <div class="row marketing">
@@ -35,7 +34,7 @@
     </div>
 
     <footer class="footer">
-        <p>© 2017 by:悟饭 https://github.com/zhangbin/juice_java </p>
+        <p>© 2017 by: <a href = "https://github.com/zhangbin/juice_java">悟饭</a> </p>
     </footer>
 
 </div> <!-- /container -->

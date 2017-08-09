@@ -24,4 +24,8 @@ public class ProductService {
         params.put("category", category);
         return productMapper.findAll(params);
     }
+
+    public List<Product> hots(){
+        return productMapper.hots();
+    }
 }

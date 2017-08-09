@@ -24,17 +24,14 @@ public class HomeController {
 
     @RequestMapping("/home/main")
     public String main(){
-        LOGGER.info("---main page--");
         return "web/main";
     }
 
     @RequestMapping("/")
     public String getHomePage(String name, Integer category, Model model) {
 
-        List<Product> list = productService.findAll(name, category);
-        LOGGER.info("===total count:"+list.size());
-        model.addAttribute("products", list);
-        LOGGER.info("-------->home");
+        model.addAttribute("products", productService.findAll(name, category));
+        model.addAttribute("hots", productService.hots());
         return "web/home";
     }
 
