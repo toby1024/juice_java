@@ -1,4 +1,4 @@
-FROM daocloud.io/skio_dep/maven_3.3.9-jdk-7
+FROM daocloud.io/java:8 maven
 
 ENV RUN_ENV prod
 
