@@ -1,7 +1,20 @@
-FROM openjdk:8-jdk-alpine
+FROM daocloud.io/tcsoft2016/springboot-maven
 
-VOLUME /tmp
-ADD target/*.jar app.jar
+ENV RUN_ENV prod
 
-ENV JAVA_OPTS=""
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
+COPY pom.xml /tmp/build/
+
+COPY src /tmp/build/src
+
+#????
+#??ssh??
+RUN echo "root:POloXM1980!@&" | chpasswd \
+    && cd /tmp/build \
+    && mvn clean package -q -P${RUN_ENV} -DskipTests=true \
+    #???????????
+    && mv target/*.jar /usr/bin/juice.jar \
+    #??????
+    && rm -rf /tmp/build
+
+EXPOSE 8080
+CMD /bin/bash docker_web_run.prod.sh
