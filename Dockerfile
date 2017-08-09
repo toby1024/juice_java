@@ -1,20 +1,7 @@
-FROM daocloud.io/tcsoft2016/springboot-maven
+FROM openjdk:8-jdk-alpine
 
-ENV RUN_ENV prod
+VOLUME /tmp
+ADD target/*.jar app.jar
 
-COPY pom.xml /tmp/build/
-
-COPY src /tmp/build/src
-
-#构建应用
-#设置ssh密码
-RUN echo "root:POloXM1980!@&" | chpasswd \
-    && cd /tmp/build \
-    && mvn clean package -q -P${RUN_ENV} -DskipTests=true \
-    #拷贝编译结果到指定目录
-    && mv target/*.jar /usr/bin/juice.jar \
-    #清理编译痕迹
-    && cd / && rm -rf /tmp/build
-
-EXPOSE 8080
-CMD /bin/bash docker_web_run.prod.sh
+ENV JAVA_OPTS=""
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
