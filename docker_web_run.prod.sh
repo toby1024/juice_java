@@ -11,5 +11,5 @@ fi
 /etc/init.d/rsyslog start
 #启动cron
 /etc/init.d/cron start
-#启动tomcat
-/bin/bash catalina.sh run
+#启动 spring boot
+/bin/bash java -jar /usr/bin/juice.jar

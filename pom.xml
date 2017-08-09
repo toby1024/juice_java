@@ -6,7 +6,7 @@
     <groupId>cn.wufan</groupId>
     <artifactId>juice_java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>juice_java</name>
     <description>Demo project for Spring Boot</description>
